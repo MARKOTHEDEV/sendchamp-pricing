@@ -7,8 +7,13 @@ import {
     Select,
   } from "chakra-react-select";
 
+type Prop ={
+  defualt:string,
+  options:{'label':string,'value':string}[],
+  onChange:(value:any)=>void
 
-const CustomSelect = ():React.ReactElement=>{
+}
+const CustomSelect = ({defualt,options,onChange}:Prop):React.ReactElement=>{
     const chakraStyles: ChakraStylesConfig = {
         dropdownIndicator: (provided, state) => ({
           ...provided,
@@ -18,30 +23,23 @@ const CustomSelect = ():React.ReactElement=>{
         //   w: "40px",
         }),
         'container':(provided, state) => ({...provided,background: 'white','border':'1px solid rgba(25, 125, 239, 0.658)','_hover':{'border':'2px solid rgb(25, 126, 239)'},
-        'padding':'8px 1rem','width':'100%','margin':'auto','borderRadius':'10px'}),
+        'padding':'8px 1rem','width':'100%','margin':'auto','borderRadius':'10px',}),
         option:(provided,state)=>({...provided,'padding':'1rem .8rem'}),
-        'menuList':(provided,state)=>({...provided,'maxW':'250px','transform':'translateX(-13px)',
-    
-        // right: '100px',
-    }),
+        'menuList':(provided,state)=>({...provided,'maxW':'250px','transform':'translateX(-13px)',}),
+        'valueContainer':(provided,state)=>({...provided,'fontSize':'1.4rem'})
+
         // 'input':(provided, state) => ({...provided,}),
       };
     return (
        
             <Select
             chakraStyles={chakraStyles}
-      
-            options={[
-                {
-                    label: "I am red",
-                    value: "i-am-red",
-                  },
-                  {
-                    label: "I fallback to purple",
-                    value: "i-am-purple",
-                  },
-            ]}
+            defaultInputValue={defualt}
+            options={options}
             selectedOptionColor={'gray.50'}
+            onChange={(newValue:any)=>{
+              onChange(newValue)
+            }}
             variant="unstyled"
             // placeholder='Select option'
             />

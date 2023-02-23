@@ -10,6 +10,9 @@ import {
     Image,
   } from '@chakra-ui/react';
 import React from 'react';
+import chapwhite from '../assets/chapwhite.svg'
+import niger from '../assets/niger.svg'
+import usa from '../assets/usa.svg'
 //   import sendChamp from './Images/sendchamp.png'
 //   import nigeria from './Images/Nigeria.svg'
 //   import usa from './Images/USA.svg'
@@ -78,15 +81,15 @@ const Footer = ():React.ReactElement=> {
           </SimpleGrid>
           <Divider />
           <HStack display={{md:'flex', base:'grid'}} textAlign={{md:'start', base:'center'}} spacing='24px' paddingBottom={'49px'} paddingTop={'49px'} padding={'49px 1%'}>
-              <Image src={'sendChamp'} w='227px' h='48px' marginRight={{md:'101px', base:'0 auto'}} margin={{base:'0 auto'}}  />
+              <Image src={chapwhite} w='227px' h='48px' marginRight={{md:'101px', base:'0 auto'}} margin={{base:'0 auto'}}  />
                  
               <Box  h='48px'  display={'flex'}>
-                  <Image w={'40px'} marginRight={'16px'} src={'nigeria'} display={{md:'flex', base:'none'}}/>
+                  <Image w={'40px'} marginRight={'16px'} src={niger} display={{md:'flex', base:'none'}}/>
                   <Text fontSize={{base:'18px'}}>142, Ahmadu Bello Way, Victoria Island,<br />
                   Lagos, Nigeria</Text>
               </Box>
               <Box  h='48px'  display={'flex'} paddingTop={{md:'0', base:'32px'}} paddingBottom={{md:'0', base:'32px'}}>
-              <Image w={'40px'} marginRight={'16px'} src={'usa'}  display={{md:'flex', base:'none'}} />
+              <Image w={'40px'} marginRight={'16px'} src={usa}  display={{md:'flex', base:'none'}} />
                       <Text fontSize={{base:'17px'}}>2055 Limestone Rd STE 200-C Wilmington,<br />
                         DE 19808
                       </Text>
